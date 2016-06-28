@@ -1,9 +1,13 @@
 ;;; gdscript-mode.el --- Provide a major mode for GDScript.
+;;; Most of the code here was written by akoaysigod, in a script
+;;; available on GitHub. This is a forked script created by HLA.
 
 (defvar gdscript-mode-map
   (let ((map (make-sparse-keymap)))
     (define-key map [remap newline-and-indent] 'gdscript-newline-and-indent) map))
 
+;;autoload
+(add-to-list 'auto-mode-alist '("\\.gd\\'" . gdscript-mode))
 
 ;;user customization
 (defcustom gdscript-tabs-mode indent-tabs-mode
@@ -16,14 +20,12 @@
   :type 'integer
   :group 'gdscript)
 
-
-
 ;;Syntax highlighting
 (defvar gdscript-builtin-words
   '("Vector2" "Rect2" "Vector3" "Matrix32" "Plane" "Quat" "AABB" "Matrix3" "Transform"))
 
 (defvar gdscript-keywords
-  '("func" "const" "var" "if" "else" "elif" "for" "while" "return" "class" "extends"))
+  '("func" "const" "var" "if" "else" "elif" "for" "while" "return" "class" "extends" "tool"))
 
 (defun regex-maker (words)
   (regexp-opt words 'symbols))

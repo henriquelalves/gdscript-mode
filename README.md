@@ -4,7 +4,8 @@ As of right now it has basic syntax highlighting and a mostly working cycling in
 
 ## Installation
 ```lisp
-(add-to-list 'load-path "/path/to/gdscript-mode.el")
+(add-to-list 'load-path "~/path/to/gdscript-mode.el/")
+(load "gdscript-mode.el")
 (require 'gdscript-mode)
 ```
 
@@ -19,5 +20,4 @@ Set indentation width. Again I couldn't find how to change this in the default e
 (setq gdscript-tab-width 4)
 ```
 
-## Help
-I've never written a major mode nor any Emacs Lisp so any help or feedback is apprecaited. 
+The script is set to open with any .gdscript file within Emacs.
